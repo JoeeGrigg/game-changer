@@ -190,6 +190,10 @@ button:hover, input[type=submit]:hover, .button:hover {
   margin: 0;
 }
 
+.scoring-notes {
+  max-width: 900px;
+}
+
 .player .title, .judge .title {
   color: var(--colour-purple-light);
 }

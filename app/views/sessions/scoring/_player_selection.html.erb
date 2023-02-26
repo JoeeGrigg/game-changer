@@ -1,4 +1,7 @@
-<p>Who scores?</p>
+<p class="scoring-notes">
+  This game allows for other players to steal the point if they think they can do better... Who did it best?</br>
+  If the judge is happy with the players first answer they can choose to not allow other players to steal.
+</p>
 
 <div class="score-options">
 <% @challenge.session.players.where.not(id: @challenge.judge_id).each do |player| %>
