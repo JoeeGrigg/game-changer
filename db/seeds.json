@@ -1,39 +1,47 @@
-{
-  "Make Some Noise": [
-    { "value": "Cat", "difficulty": 0 },
-    { "value": "Dog", "difficulty": 0 },
-    { "value": "Cow", "difficulty": 0 },
-    { "value": "Monkey", "difficulty": 0 },
-    { "value": "Frog", "difficulty": 0 },
-    { "value": "Pig", "difficulty": 0 },
-    { "value": "Chicken", "difficulty": 0 },
-    { "value": "Baby Chick", "difficulty": 0 },
-    { "value": "Mr Bean", "difficulty": 1 },
-    { "value": "A tap dripping", "difficulty": 1 },
-    { "value": "A deck of cards being shuffled", "difficulty": 1 },
-    { "value": "Stiring soup", "difficulty": 1 },
-    { "value": "Footsteps in snow", "difficulty": 1 },
-    { "value": "A helicopter", "difficulty": 1 },
-    { "value": "A pack of bears at the dinner table", "difficulty": 1 },
-    { "value": "A fire in a wax works museum", "difficulty": 2 },
-    { "value": "A mug smashing", "difficulty": 2 },
-    { "value": "A car crash into a bouncy castle", "difficulty": 2 },
-    { "value": "100 Batmans", "difficulty": 2 },
-    { "value": "Netflix Intro", "difficulty": 2 },
-    { "value": "A choo choo train", "difficulty": 2 }
-  ],
-  "Sell Me": [
-    { "value": "A pen", "difficulty": 0 },
-    { "value": "A bike", "difficulty": 0 },
-    { "value": "A book", "difficulty": 0 },
-    { "value": "A desk chair", "difficulty": 0 },
-    { "value": "A mobile phone shaped like a banana", "difficulty": 1 },
-    { "value": "A sponge shaped like a teddy bear", "difficulty": 1 },
-    { "value": "A forever popping balloon", "difficulty": 1 },
-    { "value": "An inflatable rocking horse", "difficulty": 1 },
-    { "value": "An airline that doesn't go anywhere", "difficulty": 2 },
-    { "value": "An airline powered by claps", "difficulty": 2 },
-    { "value": "An always dripping shower head", "difficulty": 2 },
-    { "value": "A monkey that only eats laxatives", "difficulty": 2 }
-  ]
-}
+[
+  { 
+    "name": "Make Some Noise",
+    "scoring": "player_selection",
+    "challenges": [
+      { "value": "Cat", "difficulty": 0 },
+      { "value": "Dog", "difficulty": 0 },
+      { "value": "Cow", "difficulty": 0 },
+      { "value": "Monkey", "difficulty": 0 },
+      { "value": "Frog", "difficulty": 0 },
+      { "value": "Pig", "difficulty": 0 },
+      { "value": "Chicken", "difficulty": 0 },
+      { "value": "Baby Chick", "difficulty": 0 },
+      { "value": "Mr Bean", "difficulty": 1 },
+      { "value": "A tap dripping", "difficulty": 1 },
+      { "value": "A deck of cards being shuffled", "difficulty": 1 },
+      { "value": "Stiring soup", "difficulty": 1 },
+      { "value": "Footsteps in snow", "difficulty": 1 },
+      { "value": "A helicopter", "difficulty": 1 },
+      { "value": "A pack of bears at the dinner table", "difficulty": 1 },
+      { "value": "A fire in a wax works museum", "difficulty": 2 },
+      { "value": "A mug smashing", "difficulty": 2 },
+      { "value": "A car crash into a bouncy castle", "difficulty": 2 },
+      { "value": "100 Batmans", "difficulty": 2 },
+      { "value": "Netflix Intro", "difficulty": 2 },
+      { "value": "A choo choo train", "difficulty": 2 }
+    ]
+  },
+  { 
+    "name": "Sell Me",
+    "scoring": "boolean",
+    "challenges": [
+      { "value": "A pen", "difficulty": 0 },
+      { "value": "A bike", "difficulty": 0 },
+      { "value": "A book", "difficulty": 0 },
+      { "value": "A desk chair", "difficulty": 0 },
+      { "value": "A mobile phone shaped like a banana", "difficulty": 1 },
+      { "value": "A sponge shaped like a teddy bear", "difficulty": 1 },
+      { "value": "A forever popping balloon", "difficulty": 1 },
+      { "value": "An inflatable rocking horse", "difficulty": 1 },
+      { "value": "An airline that doesn't go anywhere", "difficulty": 2 },
+      { "value": "An airline powered by claps", "difficulty": 2 },
+      { "value": "An always dripping shower head", "difficulty": 2 },
+      { "value": "A monkey that only eats laxatives", "difficulty": 2 }
+    ]
+  }
+]

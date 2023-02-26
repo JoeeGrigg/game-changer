@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_26_080006) do
 
   create_table "games", force: :cascade do |t|
     t.string "name", null: false
+    t.integer "scoring", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_26_080006) do
     t.integer "round", null: false
     t.integer "player_id", null: false
     t.integer "judge_id", null: false
+    t.integer "winner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_session_game_challenges_on_challenge_id"

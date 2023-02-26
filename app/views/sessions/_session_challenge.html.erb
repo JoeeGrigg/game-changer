@@ -1,10 +1,12 @@
-<% record = @session.next_challenge %>
+<h1>Game: <%= @challenge.game.name %></h1>
+<h2>Player: <%= @challenge.player.name %></h2>
+<h2>Judge: <%= @challenge.judge.name %></h2>
+<p><%= @challenge.challenge.value %></p>
 
-<h1>Game: <%= record.game.name %></h1>
-<h2>Judge: <%= record.judge.name %></h2>
-<p><%= record.challenge.value %></p>
-
-<%= form_for record, url: "/#{@session.code}/next", method: "post" do |f| %>
+<%= form_for @challenge, url: "/#{@session.code}/next", method: "post" do |f| %>
   <%= f.hidden_field :session_game_challenge_id %>
+
+  <%= render "sessions/scoring/#{@challenge.game.scoring}" %>
+
   <%= f.submit "Next" %>
 <% end %>

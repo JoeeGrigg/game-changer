@@ -8,6 +8,7 @@ class CreateSessionGameChallenges < ActiveRecord::Migration[7.0]
       t.integer :round, null: false
       t.integer :player_id, null: false
       t.integer :judge_id, null: false
+      t.integer :winner_id
       t.timestamps
     end
   end

@@ -1,9 +1,9 @@
-file = File.read("db/seeds.json")
-data = JSON.parse(file)
+data = File.read("db/seeds.json")
+games = JSON.parse(data, symbolize_names: true)
 
-data.each do |game, challenges|
-  game = Game.create!(name: game)
-  challenges.each do |challenge|
-    game.challenges.create!(challenge)
+games.each do |game|
+  g = Game.create!(game.except(:challenges))
+  game[:challenges].each do |challenge|
+    g.challenges.create!(challenge)
   end
 end

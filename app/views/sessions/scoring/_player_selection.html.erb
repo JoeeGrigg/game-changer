@@ -1,0 +1,4 @@
+<p>Who scores?</p>
+<% @challenge.session.players.each do |player| %>
+<%= radio_button_tag "session_game_challenge[winner_id]", player.id %> <%= player.name %>
+<% end %>

@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
   def show
     redirect_to "/" unless @session
+    @challenge = @session.next_challenge if @session
   end
 
   def create
@@ -29,7 +30,7 @@ class SessionsController < ApplicationController
 
   def next
     @session_game_challenge = @session.session_game_challenges.find(next_params[:session_game_challenge_id])
-    @session_game_challenge.update!(done: true)
+    @session_game_challenge.update!(done: true, winner_id: next_params[:winner_id])
     @session.update!(status: :complete) if @session.next_challenge.nil?
     redirect_to_session
   end
@@ -53,6 +54,6 @@ class SessionsController < ApplicationController
   end
 
   def next_params
-    params.require(:session_game_challenge).permit(:session_game_challenge_id)
+    params.require(:session_game_challenge).permit(:session_game_challenge_id, :winner_id)
   end
 end
