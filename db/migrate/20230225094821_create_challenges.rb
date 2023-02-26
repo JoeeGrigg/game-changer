@@ -3,6 +3,7 @@ class CreateChallenges < ActiveRecord::Migration[7.0]
     create_table :challenges do |t|
       t.belongs_to :game, null: false
       t.string :value, null: false
+      t.string :context
       t.integer :difficulty, null: false
       t.timestamps
     end

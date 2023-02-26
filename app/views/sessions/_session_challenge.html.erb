@@ -9,7 +9,12 @@
 </div>
 
 <div class="center-container">
-  <p class="challenge-value card"><%= @challenge.challenge.value %></p>
+  <div class="challenge-value card">
+    <p><%= @challenge.challenge.value %></p>
+    <% if @challenge.challenge.context %>
+      <p class="context">(<%= @challenge.challenge.context %>)</p>
+    <% end %>
+  </div>
 </div>
 
 <%= render "sessions/partials/scores" %>

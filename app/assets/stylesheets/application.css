@@ -21,6 +21,7 @@
   
 
   --colour-black: #211009;
+  --colour-grey: #6E5C55;
   --colour-white: #FEF7EF;
   --colour-orange: #E05534;
   --colour-red: #A4202D;
@@ -245,6 +246,17 @@ button:hover, input[type=submit]:hover, .button:hover {
 .challenge-value {
   font-size: 5rem;
   padding: 7.5rem;
+}
+
+.challenge-value p {
+  margin: 0;
+}
+
+.challenge-value .context {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--colour-grey);
+  font-style: italic;
 }
 
 .complete .scores {
