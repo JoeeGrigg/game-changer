@@ -22,7 +22,15 @@ class SessionsController < ApplicationController
   end
 
   def start
+    return redirect_to_session if @session.started?
     @session.start!
+    redirect_to_session
+  end
+
+  def next
+    @session_game_challenge = @session.session_game_challenges.find(next_params[:session_game_challenge_id])
+    @session_game_challenge.update!(done: true)
+    @session.update!(status: :complete) if @session.next_challenge.nil?
     redirect_to_session
   end
 
@@ -42,5 +50,9 @@ class SessionsController < ApplicationController
 
   def session_player_params
     params.require(:session_player).permit(:name)
+  end
+
+  def next_params
+    params.require(:session_game_challenge).permit(:session_game_challenge_id)
   end
 end

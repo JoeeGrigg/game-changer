@@ -30,21 +30,21 @@ class Session < ApplicationRecord
 
   def generate_session_game_challenges
     games = Game.order("RANDOM()").limit(number_of_games)
-    session_games = games.size == number_of_games ? games : (
-      games.to_a * (
-        number_of_games.to_f / games.size
-      ).ceil
-    ).take(number_of_games)
+    session_games = games.size == number_of_games ? games : (games.to_a * (number_of_games.to_f / games.size).ceil).take(number_of_games)
     (1..rounds).inject([]){|x, _| x.push(session_games) }.flatten.each_with_index do |game, round|
       challenges = game.challenges.order("RANDOM()").limit(players.size)
+      round_players = ->{ p = players.order("RANDOM()").to_a; [p, p[0]].flatten }.call
       challenges.each_with_index do |challenge, i|
-        session_game_challenges.create!(game: game, challenge: challenge, round: round + 1, judge: players[i])
+        session_game_challenges.create!(
+          game: game, challenge: challenge, round: round + 1,
+          player: round_players[i], judge: round_players[i+1]
+        )
       end
     end
   end
 
   def next_challenge
-    session_game_challenges.where(done: false).order(:round).first
+    session_game_challenges.where(done: false).order(:round, :id).first
   end
 
   private

@@ -3,3 +3,8 @@
 <h1>Game: <%= record.game.name %></h1>
 <h2>Judge: <%= record.judge.name %></h2>
 <p><%= record.challenge.value %></p>
+
+<%= form_for record, url: "/#{@session.code}/next", method: "post" do |f| %>
+  <%= f.hidden_field :session_game_challenge_id %>
+  <%= f.submit "Next" %>
+<% end %>

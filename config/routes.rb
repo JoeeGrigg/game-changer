@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   put "/:session_code", to: "sessions#update"
   post "/:session_code/players", to: "sessions#create_player"
   post "/:session_code/start", to: "sessions#start"
+  post "/:session_code/next", to: "sessions#next"
 
   # Defines the root path route ("/")
   root "home#index"
