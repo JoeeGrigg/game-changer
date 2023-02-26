@@ -2,6 +2,7 @@
   { 
     "name": "Make Some Noise",
     "scoring": "player_selection",
+    "players": 1,
     "challenges": [
       { "value": "Cat", "difficulty": 0 },
       { "value": "Dog", "difficulty": 0 },
@@ -18,17 +19,27 @@
       { "value": "Footsteps in snow", "difficulty": 1 },
       { "value": "A helicopter", "difficulty": 1 },
       { "value": "A pack of bears at the dinner table", "difficulty": 1 },
+      { "value": "Making small talk with the dentist while he carries out a procedure", "difficulty": 1 },
+      { "value": "A tiny pirate shipwreck", "difficulty": 1 },
+      { "value": "A trip down a waterfall goes horribly wrong", "difficulty": 1 },
+      { "value": "Spilling an entire lunch tray, one item at a time", "difficulty": 1 },
       { "value": "A fire in a wax works museum", "difficulty": 2 },
       { "value": "A mug smashing", "difficulty": 2 },
       { "value": "A car crash into a bouncy castle", "difficulty": 2 },
       { "value": "100 Batmans", "difficulty": 2 },
       { "value": "Netflix Intro", "difficulty": 2 },
-      { "value": "A choo choo train", "difficulty": 2 }
+      { "value": "A choo choo train", "difficulty": 2 },
+      { "value": "A pirate at the north pole", "difficulty": 2 },
+      { "value": "If rollercoasters could talk", "difficulty": 2 },
+      { "value": "6 confronts 7 about eating 9", "difficulty": 2 },
+      { "value": "A musical theatre character just before breaking out into song", "difficulty": 2 },
+      { "value": "A dog smelling something it is unsure of", "difficulty": 2 }
     ]
   },
   { 
     "name": "Sell Me",
     "scoring": "boolean",
+    "players": 1,
     "challenges": [
       { "value": "A pen", "difficulty": 0 },
       { "value": "A bike", "difficulty": 0 },
@@ -42,6 +53,17 @@
       { "value": "An airline powered by claps", "difficulty": 2 },
       { "value": "An always dripping shower head", "difficulty": 2 },
       { "value": "A monkey that only eats laxatives", "difficulty": 2 }
+    ]
+  },
+  {
+    "name": "Improv",
+    "scoring": "boolean",
+    "players": 2,
+    "challenges": [
+      { "value": "A foreign politition and their translator", "difficulty": 1 },
+      { "value": "The left and right side of the brain", "difficulty": 1 },
+      { "value": "Two dogs that are excited to see each other for the first time in a while", "difficulty": 1 },
+      { "value": "The locker room of a stressful ultimate frisby game", "difficulty": 1 }
     ]
   }
 ]

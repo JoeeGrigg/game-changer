@@ -47,6 +47,12 @@ class Session < ApplicationRecord
     session_game_challenges.where(done: false).order(:round, :id).first
   end
 
+  def scores
+    players.each_with_object({}) do |player, scores|
+      scores[player.name] = player.scored_challenges.count
+    end
+  end
+
   private
 
   def validate_before_start

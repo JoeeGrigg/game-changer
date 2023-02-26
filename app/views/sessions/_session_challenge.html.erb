@@ -3,6 +3,8 @@
 <h2>Judge: <%= @challenge.judge.name %></h2>
 <p><%= @challenge.challenge.value %></p>
 
+<p><%= @challenge.session.scores %></p>
+
 <%= form_for @challenge, url: "/#{@session.code}/next", method: "post" do |f| %>
   <%= f.hidden_field :session_game_challenge_id %>
 
