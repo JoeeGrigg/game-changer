@@ -2,7 +2,7 @@
   { 
     "name": "Make Some Noise",
     "scoring": "player_selection",
-    "players": 1,
+    "pick_a_partner": false,
     "challenges": [
       { "value": "Cat", "difficulty": 0 },
       { "value": "Dog", "difficulty": 0 },
@@ -39,7 +39,7 @@
   { 
     "name": "Sell Me",
     "scoring": "boolean",
-    "players": 1,
+    "pick_a_partner": false,
     "challenges": [
       { "value": "A pen", "difficulty": 0 },
       { "value": "A bike", "difficulty": 0 },
@@ -58,7 +58,7 @@
   {
     "name": "Improv",
     "scoring": "boolean",
-    "players": 2,
+    "pick_a_partner": true,
     "challenges": [
       { "value": "A foreign politition and their translator", "difficulty": 1 },
       { "value": "The left and right side of the brain", "difficulty": 1 },
