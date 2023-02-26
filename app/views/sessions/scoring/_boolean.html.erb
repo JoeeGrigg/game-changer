@@ -1,3 +1,12 @@
 <p>Do they score?</p>
-<%= radio_button_tag "session_game_challenge[winner_id]", @challenge.player.id %> Yes
-<%= radio_button_tag "session_game_challenge[winner_id]", 0 %> No
+
+<div class="score-options">
+  <label for="score-yes" class="button">
+    <input type="radio" id="score-yes" name="session_game_challenge[winner_id]" value="<%= @challenge.player.id %>">
+    Yes
+  </label>
+  <label for="score-no" class="button">
+    <input type="radio" id="score-no" name="session_game_challenge[winner_id]" value="0">
+    No
+  </label>
+</div>

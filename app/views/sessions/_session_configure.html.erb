@@ -1,8 +1,19 @@
-<h1>Game Settings</h1>
+<div class="box-center box-title card">
+  <h1>Game Settings</h1>
 
-<%= form_for @session, url: "/#{@session.code}", method: "put" do |f| %>
-  Game Name: <%= f.text_field :name %><br />
-  Number of Games: <%= f.number_field :number_of_games %><br />
-  Rounds: <%= f.number_field :rounds %><br />
-  <%= f.submit "Add Players" %>
-<% end %>
+  <%= form_for @session, url: "/#{@session.code}", method: "put" do |f| %>
+    <div class="input-container">
+      <%= f.label :name, "Game Name"%>
+      <%= f.text_field :name %>
+    </div>
+    <div class="input-container">
+      <%= f.label :number_of_games, "Number of Games" %>
+      <%= f.number_field :number_of_games %>
+    </div>
+    <div class="input-container">
+      <%= f.label :rounds, "Rounds" %>
+      <%= f.number_field :rounds %>
+    </div>
+    <%= f.submit "Add Players", class: "box-button" %>
+  <% end %>
+</div>

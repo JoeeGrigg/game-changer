@@ -1,19 +1,16 @@
-<h1>Game: <%= @challenge.game.name %></h1>
-<h2>
-  Player: <%= @challenge.player.name %>
-  <% if @challenge.game.pick_a_partner %>
-  (Pick a partner)
-  <% end %>
-</h2>
-<h2>Judge: <%= @challenge.judge.name %></h2>
-<p><%= @challenge.challenge.value %></p>
+<div class="challenge-info">
+  <h1 class="game"><%= @challenge.game.name %></h1></br>
+  <h2 class="player">
+    <span class="title">Player:</span> <%= @challenge.player.name %>
+    <% if @challenge.game.pick_a_partner %>
+    (Pick a partner)
+    <% end %>
+  </h2>
+</div>
 
-<p><%= @challenge.session.scores %></p>
+<div class="center-container">
+  <p class="challenge-value card"><%= @challenge.challenge.value %></p>
+</div>
 
-<%= form_for @challenge, url: "/#{@session.code}/next", method: "post" do |f| %>
-  <%= f.hidden_field :session_game_challenge_id %>
-
-  <%= render "sessions/scoring/#{@challenge.game.scoring}" %>
-
-  <%= f.submit "Next" %>
-<% end %>
+<%= render "sessions/partials/scores" %>
+<%= render "sessions/partials/scoring" %>

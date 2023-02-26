@@ -1,4 +1,10 @@
 <p>Who scores?</p>
-<% @challenge.session.players.each do |player| %>
-<%= radio_button_tag "session_game_challenge[winner_id]", player.id %> <%= player.name %>
+
+<div class="score-options">
+<% @challenge.session.players.where.not(id: @challenge.judge_id).each do |player| %>
+  <label for="score-<%= player.id %>" class="button">
+    <input type="radio" id="score-<%= player.id %>" name="session_game_challenge[winner_id]" value="<%= player.id %>">
+    <%= player.name %>
+  </label>
 <% end %>
+</div>

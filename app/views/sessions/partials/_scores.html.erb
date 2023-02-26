@@ -1,0 +1,10 @@
+<% scores = @session.scores %>
+
+<ul class="scores">
+  <% scores.each do |player, score| %>
+    <li>
+      <span class="name"><%= player %>:</span>
+      <span class="score"><%= score %></span>
+    </li>
+  <% end %>
+</ul>

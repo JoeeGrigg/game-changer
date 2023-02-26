@@ -13,3 +13,243 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --scale: 1;
+  --padding: 1rem;
+  --border-radius: calc(2rem * (var(--scale) / 2));
+  
+
+  --colour-black: #211009;
+  --colour-white: #FEF7EF;
+  --colour-orange: #E05534;
+  --colour-red: #A4202D;
+  --colour-red-dark: #761721;
+  --colour-purple-light: #85677D;
+  --colour-purple: #5B3751;
+  --colour-green: #5E9790;
+  --colour-green-dark: #46716B;
+  --colour-yellow: #F9A648;
+
+}
+
+html {
+  font-family: sans-serif;
+  font-weight: bold;
+  background: var(--colour-green);
+  color: var(--colour-black);
+}
+
+button, input[type=submit], .button {
+  --color: var(--colour-red);
+  --text-color: var(--colour-black);
+  --border-color: var(--colour-red-dark);
+  --transition-speed: 1;
+  --height: 3px;
+  background: var(--color);
+  color: var(--text-color);
+  border: none;
+  padding: calc(1rem * var(--scale)) calc(2rem * var(--scale));
+  font-size: calc(2rem * var(--scale));
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  box-shadow: var(--height) var(--height) 0px var(--border-color);
+  transform: translate(calc(-1 * var(--height)), calc(-1 * var(--height)));
+  transition: transform calc(.3s * var(--transition-speed)), box-shadow calc(.3s * var(--transition-speed));
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, input[type=submit]:hover, .button:hover {
+  transform: translate(0px, 0px);
+  box-shadow: 0px 0px 0px var(--border-color);
+}
+
+.button-green {
+  --color: var(--colour-green) !important;
+  --text-color: var(--colour-white) !important;
+  --border-color: var(--colour-green-dark) !important;
+}
+
+.card {
+  background: var(--colour-white);
+  border: 1rem solid var(--colour-black);
+  border-radius: calc(var(--border-radius) * 2);
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale)); 
+}
+
+.box-center {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box-title {
+  margin: 3rem auto;
+}
+
+.box-title h1 {
+  font-size: 5rem;
+  margin: 0;
+  margin-bottom: calc(var(--padding) * var(--scale) * 3);
+}
+
+.input-container {
+  margin-bottom: 1rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.input-container label, .input-container input {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  box-sizing: border-box;
+}
+
+.box-button {
+  margin-top: calc(var(--padding) * var(--scale) * 3);
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.players {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.players li,  .player-row {
+  background: var(--colour-yellow);
+  padding: calc(var(--padding) * var(--scale));
+  border-radius: calc(2rem * (var(--scale) / 2));
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.player-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.player-form .input-container {
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.scores {
+  display: block;
+  position: absolute;
+  right: calc(var(--padding) * var(--scale));
+  top: calc(var(--padding) * var(--scale));
+  background: #F9A648;
+  border-radius: calc(2rem * (var(--scale) / 2));
+  padding: calc(var(--padding) * var(--scale));
+  list-style: none;
+  margin: 0;
+  boz-sizing: border-box;
+}
+
+.scores li {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.scores .name {
+  margin-right: calc(var(--padding) * var(--scale));
+}
+
+.scoring {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale));
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 5px solid var(--colour-purple);
+  background: var(--colour-yellow);
+}
+
+.judge {
+  background: var(--colour-purple);
+  color: var(--colour-white);
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale));
+  border-radius: var(--border-radius);
+  display: inline-block;
+  margin: 0;
+}
+
+.player .title, .judge .title {
+  color: var(--colour-purple-light);
+}
+
+.score-options label {
+  margin: 0 calc(var(--padding) * var(--scale)); 
+}
+
+.challenge-info {
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale));
+  top: 0;
+  left: 0;
+}
+
+.challenge-info h1 {
+  background: var(--colour-yellow);
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale));
+  border-radius: var(--border-radius);
+  margin: 0;
+  display: inline-block;
+}
+
+.challenge-info .player {
+  background: var(--colour-purple);
+  color: var(--colour-white);
+  display: inline-block;
+  padding: calc(var(--padding) * var(--scale)) calc(var(--padding) * var(--scale));
+  border-radius: var(--border-radius);
+}
+
+.center-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 15%;
+  z-index: -1;
+}
+
+.challenge-value {
+  font-size: 5rem;
+  padding: 7.5rem;
+}
+
+.complete .scores {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 0 20%;
+}
+
+.complete .button {
+  display: block;
+}

@@ -1,5 +1,7 @@
-<h1>Thanks for playing</h1>
+<div class="box-center box-title card complete">
+  <h1>Thanks for playing</h1>
 
-<p><%= @session.scores %></p>
+  <%= render "sessions/partials/scores" %>
 
-<%= link_to "Start new game...", "/"%>
+  <%= link_to "Start new game...", "/", class: "button box-button" %>
+</div>

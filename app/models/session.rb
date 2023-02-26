@@ -44,12 +44,12 @@ class Session < ApplicationRecord
   end
 
   def next_challenge
-    session_game_challenges.where(done: false).order(:round, :id).first
+    session_game_challenges.includes(:game, :challenge).where(done: false).order(:round, :id).first
   end
 
   def scores
-    players.each_with_object({}) do |player, scores|
-      scores[player.name] = player.scored_challenges.count
+    players.includes(:scored_challenges).each_with_object({}) do |player, scores|
+      scores[player.name] = player.scored_challenges.size
     end
   end
 

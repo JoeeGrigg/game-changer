@@ -1,18 +1,20 @@
-<h1>Add Players</h1>
+<div class="box-center box-title card">
+  <h1>Add Players</h1>
 
-<ul>
-  <% @session.players.each do |player| %>
-    <li><%= player.name %></li> 
+  <ul class="players">
+    <% @session.players.each do |player| %>
+      <li><%= player.name %></li> 
+    <% end %>
+  </ul>
+
+  <%= form_for :session_player, url: "/#{@session.code}/players", class: "player-row player-form" do |f| %>
+    <div class="input-container">
+      <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
+    </div>
+    <%= f.submit "Add Player" %>
   <% end %>
-</ul>
 
-<%= form_for :session_player, url: "/#{@session.code}/players" do |f| %>
-  Name: <%= f.text_field :name, autofocus: true %><br />
-  <%= f.submit "Add Player" %>
-<% end %>
-
-<hr>
-
-<%= form_for :session, url: "/#{@session.code}/start" do |f| %>
-  <%= f.submit "Start Game" %>
-<% end %>
+  <%= form_for :session, url: "/#{@session.code}/start" do |f| %>
+    <%= f.submit "Start Game", class: "box-button" %>
+  <% end %>
+</div>

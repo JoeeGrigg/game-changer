@@ -1,0 +1,8 @@
+<%= form_for @challenge, url: "/#{@session.code}/next", method: "post", html: { class: "scoring" } do |f| %>
+  <%= f.hidden_field :session_game_challenge_id %>
+
+  <h2 class="judge"><span class="title">Judge:</span> <%= @challenge.judge.name %></h2>
+  <%= render "sessions/scoring/#{@challenge.game.scoring}" %>
+
+  <%= f.submit "Next", class: "button-green" %>
+<% end %>
