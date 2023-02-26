@@ -1,0 +1,18 @@
+<h1>Add Players</h1>
+
+<ul>
+  <% @session.players.each do |player| %>
+    <li><%= player.name %></li> 
+  <% end %>
+</ul>
+
+<%= form_for :session_player, url: "/#{@session.code}/players" do |f| %>
+  Name: <%= f.text_field :name, autofocus: true %><br />
+  <%= f.submit "Add Player" %>
+<% end %>
+
+<hr>
+
+<%= form_for :session, url: "/#{@session.code}/start" do |f| %>
+  <%= f.submit "Start Game" %>
+<% end %>

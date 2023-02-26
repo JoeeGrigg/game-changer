@@ -1,0 +1,10 @@
+<% case @session.status %>
+<% when "configuring" %>
+  <%= render "session_configure"%>
+<% when "configuring_add_players" %>
+  <%= render "session_configure_players"%>
+<% when "started" %>
+  <%= render "session_challenge"%>
+<% else%>
+<h1>No template...</h1>
+<% end %>

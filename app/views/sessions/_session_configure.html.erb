@@ -1,0 +1,8 @@
+<h1>Game Settings</h1>
+
+<%= form_for @session, url: "/#{@session.code}", method: "put" do |f| %>
+  Game Name: <%= f.text_field :name %><br />
+  Number of Games: <%= f.number_field :number_of_games %><br />
+  Rounds: <%= f.number_field :rounds %><br />
+  <%= f.submit "Add Players" %>
+<% end %>
